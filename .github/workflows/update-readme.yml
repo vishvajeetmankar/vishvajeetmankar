@@ -1,8 +1,14 @@
-name: Auto Update README
+
+---
+
+### 🔹 Step 2: Update Your `update-readme.yml` Workflow
+
+```yaml
+name: Auto Update Timestamp
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs daily at 5:30 AM IST
+    - cron: '0 0 * * *'  # Every day 5:30 AM IST
   workflow_dispatch:
 
 jobs:
@@ -10,18 +16,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-    - name: Update README
-      run: |
-        echo "## Hello Vishvajeet! 👋" > README.md
-        echo "Last updated on $(date)" >> README.md
+      - name: Update timestamp in README
+        run: |
+          dt=$(TZ='Asia/Kolkata' date +"%A, %d %B %Y, %I:%M %p IST")
+          sed -i "s|_Last updated on: .*_|_Last updated on: $dt_|" README.md
 
-    - name: Commit and Push
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "actions@github.com"
-        git add README.md || echo "Nothing to add"
-        git commit -m "🔄 Auto-update README" || echo "No changes to commit"
-        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add README.md || echo "Nothing to add"
+          git commit -m "🕒 Update timestamp" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
