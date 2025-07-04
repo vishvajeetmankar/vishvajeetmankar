@@ -40,5 +40,5 @@ Tools:      Git, GitHub, VS Code, Postman
 If you’re looking to collaborate, hire, or just connect around tech, feel free to reach out on [LinkedIn](https://www.linkedin.com/in/vishvajeetmankar/)!
 
 ---
-_Last updated on: <!--TIMESTAMP-->_
+_Last updated on: 
 ---
