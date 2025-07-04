@@ -1,15 +1,9 @@
-
----
-
-### 🔹 Step 2: Update Your `update-readme.yml` Workflow
-
-```yaml
 name: Auto Update Timestamp
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Every day 5:30 AM IST
-  workflow_dispatch:
+    - cron: '0 0 * * *'  # Runs daily at 5:30 AM IST
+  workflow_dispatch: {}
 
 jobs:
   update-readme:
