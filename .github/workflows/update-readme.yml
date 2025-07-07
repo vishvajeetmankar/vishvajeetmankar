@@ -13,15 +13,19 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Update timestamp in README
+      - name: Update README timestamp
         run: |
           dt=$(TZ='Asia/Kolkata' date +"%A, %d %B %Y, %I:%M %p IST")
           sed -i "s|_Last updated on: .*_|_Last updated on: $dt_|" README.md
+
+      - name: Append to log.txt (force file change)
+        run: |
+          echo "Update on $(date)" >> log.txt
 
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add README.md || echo "Nothing to add"
-          git commit -m "🕒 Update timestamp" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git add .
+          git commit -m "🕒 Auto update README and log" || echo "No changes to commit"
+          git push
