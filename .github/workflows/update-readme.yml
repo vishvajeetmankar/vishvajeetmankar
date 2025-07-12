@@ -2,7 +2,7 @@ name: Daily Streak Commit
 
 on:
   schedule:
-    - cron: '0 4 * * *'  # 9:30 AM IST
+    - cron: '0 4 * * *'  # Runs every day at 9:30 AM IST
   workflow_dispatch: {}
 
 jobs:
@@ -10,16 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Update timestamp in log.txt
-        run: echo "Daily log: $(date)" >> log.txt
+      - name: Update README timestamp
+        run: |
+          dt=$(TZ='Asia/Kolkata' date +"%A, %d %B %Y, %I:%M %p IST")
+          sed -i "s|_Last updated on: .*_|_Last updated on: $dt_|" README.md
+
+      - name: Update log.txt to force commit
+        run: |
+          echo "Daily update: $(TZ='Asia/Kolkata' date)" >> log.txt
 
       - name: Commit and Push
         run: |
           git config --global user.name "vishvajeetmankar"
-          git config --global user.email "vishumankar2196@gmail.com"
-          git add log.txt
-          git commit -m "📅 Daily streak commit" || echo "No changes"
+          git config --global user.email "vishumankar2196@gmail.com"  # 👈 Replace with actual email
+          git add README.md log.txt
+          git commit -m "📅 Daily commit to keep streak alive" || echo "No changes"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
