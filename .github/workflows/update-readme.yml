@@ -1,31 +1,25 @@
-name: Auto Update Timestamp
+name: Daily Streak Commit
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs daily at 5:30 AM IST
+    - cron: '0 4 * * *'  # 9:30 AM IST
   workflow_dispatch: {}
 
 jobs:
-  update-readme:
+  commit-daily:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Update README timestamp
-        run: |
-          dt=$(TZ='Asia/Kolkata' date +"%A, %d %B %Y, %I:%M %p IST")
-          sed -i "s|_Last updated on: .*_|_Last updated on: $dt_|" README.md
-
-      - name: Append to log.txt (force file change)
-        run: |
-          echo "Update on $(date)" >> log.txt
+      - name: Update timestamp in log.txt
+        run: echo "Daily log: $(date)" >> log.txt
 
       - name: Commit and Push
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-          git add .
-          git commit -m "🕒 Auto update README and log" || echo "No changes to commit"
-          git push
+          git config --global user.name "vishvajeetmankar"
+          git config --global user.email "vishumankar2196@gmail.com"
+          git add log.txt
+          git commit -m "📅 Daily streak commit" || echo "No changes"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
