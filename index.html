@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VishvaJeet</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p1PkfjB0tq9nX3ueT+Sy9WpqTHzDd8gdNi2psHKZbEaXedZQONdr6O0f1Jc11LVlDWAkPkTrk2X9it6KQpPl6Q=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f9f9f9;
+    }
+    .navbar {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    /* Blue gradient theme */
+    .hero {
+      background: linear-gradient(100deg, #1976d2, #08C8F6);
+      color: white;
+      padding: 70px 0 45px;
+      min-height: 320px;
+    }
+    /* Two column layout for hero */
+    .hero .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-left,
+    .hero-right {
+      flex: 1;
+      min-width: 280px;
+    }
+    .hero-left {
+      text-align: left;
+      padding: 30px 20px 30px 40px;
+    }
+    .hero-left h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px #0b3d91;
+    }
+    .hero-left p {
+     font-size: 1.25rem;
+    min-height: 120px; /* Increased for multiline */
+    margin-bottom: 30px;
+    font-family: monospace;
+    overflow: hidden; /* Hide text overflow */
+    border-right: 2px solid white;
+    animation: blink-caret 0.75s step-end infinite;
+    white-space: normal; /* Allow text wrap */
+    word-wrap: break-word; /* Ensure long words break */
+    max-width: 100%; /* Full container width */
+    }
+    .hero-right {
+      text-align: center;
+    }
+    .hero-right img {
+      max-width: 290px;
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+    }
+    @media (max-width: 991px) {
+      .hero .container {
+        flex-direction: column;
+      }
+      .hero-left,
+      .hero-right {
+        text-align: center;
+        padding: 20px;
+      }
+    }
+    @keyframes blink-caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+    /* Stats Section */
+    .stats {
+      padding: 60px 0;
+    }
+    .stat-box {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+      padding: 28px;
+      margin: 20px 15px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .stat-box:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 6px 24px rgba(25, 118, 210, 0.3);
+      border-color: #1976d2;
+    }
+    /* Section blocks and cards */
+    .section-block {
+      background: #fff;
+      padding: 60px 0;
+    }
+    .project-card,
+    .connect-card,
+    .stat-box {
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .project-card:hover,
+    .connect-card:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 6px 24px rgba(8, 200, 246, 0.2);
+      border-color: #1976d2;
+    }
+    .project-card a,
+    .connect-card a {
+      transition: color 0.2s;
+      color: #1976d2;
+    }
+    .project-card a:hover,
+    .connect-card a:hover {
+      color: #08c8f6;
+      text-decoration: underline;
+    }
+    .btn-warning {
+      background-color: #1976d2;
+      border-color: #1976d2;
+    }
+    .btn-warning:hover {
+      background-color: #0b3d91;
+      border-color: #0b3d91;
+      filter: brightness(0.9);
+    }
+    .footer {
+      background: #0b3d91;
+      color: #fff;
+      padding: 22px 0 12px;
+      font-weight: 600;
+    }
+    .footer a {
+      color: #08c8f6;
+      margin: 0 10px;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+    .footer a:hover {
+      color: #b3e5fc;
+      text-decoration: underline;
+    }
+    /* Caret animation is controlled dynamically by JavaScript */
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">VishvaJeet</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="#projects" class="nav-link text-primary fw-semibold">Projects</a></li>
+          <li class="nav-item"><a href="#connect" class="nav-link text-primary fw-semibold">Connect</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link text-primary fw-semibold">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-left">
+        <h1>VishvaJeet</h1>
+        <p id="typewriter"></p>
+      </div>
+      <div class="hero-right">
+        <img
+          src="https://i.ibb.co/QvzybGXY/Pngtree-energetic-young-programmer-at-work-20109563.png"
+          alt="Cartoon coder"
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-3 stat-box text-primary">
+          <div class="display-5 fw-bold">Full Stack</div>
+          <div class="mt-1">Developer</div>
+        </div>
+        <div class="col-md-3 stat-box text-success">
+          <div class="display-5 fw-bold">AI / ML</div>
+          <div class="mt-1">Projects</div>
+        </div>
+        <div class="col-md-3 stat-box text-warning">
+          <div class="display-5 fw-bold">Cloud</div>
+          <div class="mt-1">Computing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section-block">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-5 text-primary">Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card project-card">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Portfolio Website</h5>
+              <p class="card-text">A personal portfolio with smooth scrolling and modern design. HTML, CSS, Bootstrap.</p>
+              <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card project-card">
+            <div class="card-body">
+              <h5 class="card-title text-primary">E-commerce Responsive Page</h5>
+              <p class="card-text">Landing page of ecommerce site with interactive features. HTML, CSS, JS.</p>
+              <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card project-card">
+            <div class="card-body">
+              <h5 class="card-title text-primary">REST API Service</h5>
+              <p class="card-text">API for User CRUD operations. Node.js, Express, MySQL/Postgres.</p>
+              <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect Section -->
+  <section id="connect" class="section-block">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-5 text-primary">Connect</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-5">
+          <div class="card connect-card">
+            <div class="card-body">
+              <h5 class="card-title text-success">
+                <i class="fab fa-linkedin me-2"></i>LinkedIn Profile
+              </h5>
+              <p class="card-text">
+                Know more about my experience, skills, and achievements.<br />
+                <a
+                  href="https://www.linkedin.com/in/vishvajeetmankar/"
+                  target="_blank"
+                  rel="noopener"
+                  >linkedin.com/in/vishvajeetmankar</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="card connect-card">
+            <div class="card-body">
+              <h5 class="card-title text-success"><i class="fab fa-github me-2"></i>GitHub Projects</h5>
+              <p class="card-text">
+                Explore my open-source code, contributions, and project repositories.<br />
+                <a href="https://github.com/vishvajeetmankar" target="_blank" rel="noopener"
+                  >github.com/vishvajeetmankar</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-block">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-4 text-primary">Contact</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form id="contactForm" novalidate>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name:</label>
+              <input type="text" class="form-control" id="name" required />
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" class="form-control" id="email" required />
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message:</label>
+              <textarea class="form-control" id="message" rows="4" required></textarea>
+              <div class="invalid-feedback">Please enter your message.</div>
+            </div>
+            <button type="submit" class="btn btn-warning">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    &copy; 2025 VishvaJeet |
+    <a href="https://www.linkedin.com/in/vishvajeetmankar/" target="_blank" rel="noopener"
+      ><i class="fab fa-linkedin"></i> LinkedIn</a
+    >|
+    <a href="https://github.com/vishvajeetmankar" target="_blank" rel="noopener"
+      ><i class="fab fa-github"></i> GitHub</a
+    >
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Typing animation for intro lines
+    const lines = [
+      'Developer, Innovator, and Lifelong Learner.',
+      'Passionate about building full stack web apps, AI/ML projects, and cloud-based solutions.',
+      'I love solving real-world problems through technology.',
+    ];
+    let i = 0;
+    let charIndex = 0;
+    const typingSpeed = 50;
+    const pauseBetweenLines = 1500;
+    const element = document.getElementById('typewriter');
+
+    function type() {
+      if (i >= lines.length) {
+        i = 0; // repeat animation forever
+      }
+      let currentLine = lines[i];
+      if (charIndex < currentLine.length) {
+        element.textContent += currentLine.charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingSpeed);
+      } else {
+        setTimeout(() => {
+          element.textContent = '';
+          charIndex = 0;
+          i++;
+          type();
+        }, pauseBetweenLines);
+      }
+    }
+
+    type();
+
+    // Contact form validation
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      let isValid = true;
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const message = document.getElementById('message');
+      if (name.value.trim() === '') {
+        isValid = false;
+        name.classList.add('is-invalid');
+      } else {
+        name.classList.remove('is-invalid');
+      }
+      if (email.value.trim() === '' || !email.value.includes('@')) {
+        isValid = false;
+        email.classList.add('is-invalid');
+      } else {
+        email.classList.remove('is-invalid');
+      }
+      if (message.value.trim() === '') {
+        isValid = false;
+        message.classList.add('is-invalid');
+      } else {
+        message.classList.remove('is-invalid');
+      }
+      if (isValid) {
+        alert('Thank you for contacting!');
+        name.value = '';
+        email.value = '';
+        message.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
