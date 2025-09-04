@@ -14,7 +14,7 @@
 ---
 ### 📈 GitHub Stats
 
-![GitHub Streak](https://streak-stats.demolab.com?user=vishvajeetmankar&theme=tokyonight&hide_border=true)
+![GitHub Streak](https://github-readme-streak-stats-eight.vercel.app?user=vishvajeetmankar&theme=tokyonight&hide_border=true)
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=vishvajeetmankar&show_icons=true&theme=tokyonight&hide_border=true)
 
