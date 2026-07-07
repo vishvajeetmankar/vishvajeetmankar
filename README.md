@@ -1,6 +1,6 @@
 # 👋 Hi, I'm Vishvajeet Mankar
 
-### 💻 Software Developer | MCA Graduate | Full Stack Developer
+### 💻 Software Developer | MCA Graduate | Full Stack Developer | Salesforce
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/vishvajeetmankar/)
 [![HackerRank](https://img.shields.io/badge/HackerRank-2EC866?logo=hackerrank&style=flat-square)](https://www.hackerrank.com/profile/vishumankar2196)
@@ -11,20 +11,18 @@
 
 - 🎓 MCA Graduate (2024–2026)
 - 💻 Software Developer passionate about building scalable web applications
-- 🌱 Currently learning **Angular** & **ASP.NET Web API**
+- 🌱 Currently learning Salesforce
 - 🤖 Exploring AI-powered applications and backend development
 - 📚 Always learning new technologies and improving problem-solving skills
 - 📫 Connect with me on LinkedIn
 
 ---
 
-## 📊 GitHub Stats
+## 📈 GitHub Activity
 
-![](https://github-readme-streak-stats.herokuapp.com/?user=vishvajeetmankar&theme=tokyonight&hide_border=true)
+[![GitHub Streak](https://streak-stats.demolab.com?user=vishvajeetmankar&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
 
-![](https://github-readme-stats.vercel.app/api?username=vishvajeetmankar&show_icons=true&theme=tokyonight&hide_border=true&cache_seconds=1800)
-
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=vishvajeetmankar&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=1800)
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=vishvajeetmankar&theme=tokyo-night)](https://github.com/Ashutosh00710/github-readme-activity-graph)
 
 ---
 
@@ -32,9 +30,9 @@
 
 ```text
 Frontend : HTML | CSS | JavaScript | React.js | Angular (Learning)
-Backend  : Python | Node.js | Express.js | ASP.NET Web API (Learning)
+Backend  : Python | Node.js | Express.js | Salesforce
 Database : MongoDB | MySQL | SQL
-Tools    : Git | GitHub | VS Code | Postman | Firebase Studio
+Tools    : Git | GitHub | VS Code | Postman | Firebase Studio | Salesforce 
 ```
 
 ---
