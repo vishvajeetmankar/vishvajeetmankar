@@ -20,9 +20,7 @@
 
 ## 📈 GitHub Activity
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=vishvajeetmankar&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
-
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=vishvajeetmankar&theme=tokyo-night)](https://github.com/Ashutosh00710/github-readme-activity-graph)
+![GitHub Streak](https://github-readme-streak-stats-eight.vercel.app?user=vishvajeetmankar&theme=tokyonight&hide_border=true)
 
 ---
 
